@@ -1,0 +1,617 @@
+@import "bootstrap.less";
+@import "colors.less";
+@import "fonts.less";
+@import "buttons.less";
+@import "maps.less";
+@import "campaign.less";
+// @import "circles.less";
+
+html {
+    font-size: 14px;
+}
+body {
+    margin: 0;
+    padding:0;
+    background: @white;
+    color: @dkgrey2;
+    font-family: 'Whitney', Helvetica, sans-serif;
+    -webkit-font-smoothing:antialiased;
+}
+/*
+    Site Layout
+*/
+.site {
+    overflow: hidden;
+}
+
+h1, h2, h3, h4 {
+    text-rendering: optimizeLegibility;
+
+    small {
+        line-height: 1.8;
+    }
+}
+h1 {
+    font-weight: 400;
+}
+h2 {
+    margin-top: 4px;
+    font-weight: 600;
+    font-size: 24px;
+
+    a {
+        display: inline-block;
+    }
+}
+h3 {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: inherit;
+}
+h4 {
+    line-height: 1.5;
+}
+hr {
+    border-color: @ltgrey;
+}
+p {
+    line-height: 1.4;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: all .3s ease;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        border-bottom: 1px solid @blue;
+        color: @blue;
+    }
+}
+.lead {
+}
+.small {
+    font-size: .75em;
+    line-height: 1.8;
+}
+.short {
+    line-height: 1.2;
+}
+.foodbank-link {
+    margin-top: 7px;
+    display: block;
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+        border-bottom: none;
+        color: @blue;
+    }
+}
+@media (max-width: 767px) {
+    .foodbank-img {
+        width: 100%;
+        padding-bottom: 20px;
+    }
+}
+
+.page-title {
+    color: #fff;
+    font-size: 28px;
+    letter-spacing: -1.2px;
+    font-weight: 600;
+    margin: 0;
+
+    small {
+        font-weight: 400;
+    }
+}
+
+table {
+    font-size: 1rem;
+
+    > tbody > tr {
+        td:nth-of-type(1) {
+            padding-left: 0;
+            width: 40%;
+        }
+        td:nth-of-type(2) {
+            padding-right: 0;
+        }
+    }
+}
+dl {
+    dt {
+        padding-top: 15px;
+        margin-top: 10px;
+        border-top: 1px solid @tan;
+    }
+}
+ol, ul {
+    padding-left: 24px;
+}
+
+
+
+/*
+    Responsive Image with Set Aspect Ratio
+    Thanks: http://daverupert.com/2012/04/uncle-daves-ol-padded-box/
+*/
+.img-aspect-16-9 {
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 */
+}
+.img-aspect-4-3 {
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    height: 0;
+    padding-bottom: 75%; /* 4:3 */
+}
+.img-responsive {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+
+
+/*
+    Sections
+*/
+.row-nm {
+    margin: 0;
+}
+
+section {
+    padding: 0;
+
+    .container {
+        padding: 0;
+    }
+
+    &.main-content {
+        min-height: 70vh;
+    }
+}
+.mt {
+    margin-top: 20px;
+}
+.mt-2 {
+    margin-top: 40px;
+}
+.mt-3 {
+    margin-top: 60px;
+}
+.mtt {
+    margin-top: 5px;
+}
+.mb {
+    margin-bottom: 20px;
+}
+.bt {
+    border-top: 1px solid @tan;
+}
+.bb {
+    border-bottom: 1px solid @tan;
+}
+.pt {
+    padding-top: 10px;
+}
+.pt2 {
+    padding-top: 30px;
+}
+.pb {
+    padding-top: 10px;
+}
+.pb2 {
+    padding-bottom: 30px;
+}
+.ptb {
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+@media (min-width: 600px){
+    .ptb {
+        padding-bottom: 50px;
+        padding-top: 50px;
+    }
+}
+.padded {
+    padding: 20px;
+}
+.padded-fat {
+    padding: 20px;
+}
+@media (min-width: 600px){
+    .padded-fat {
+        padding: 20px 50px;
+    }
+}
+.padded-short {
+    padding: 8px 20px 12px;
+}
+.padded-medium {
+    padding: 40px 20px;
+}
+.padded-tall {
+    padding-top: 64px;
+    padding-bottom: 40px;
+}
+
+@media (min-width: 600px){
+    .padded-tall {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
+.thirds-box {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+.third {
+    width: 33.33%;
+    padding: 3px;
+    display: block;
+    float: left;
+}
+
+
+/*
+    Banner Images
+*/
+.banner {
+    display: block;
+    position: relative;
+    height: 80vh;
+
+    .banner-img {
+        background-color: @black;
+        background-size: 240%;
+        background-position: 70% 73%;
+        box-shadow: inset 0 -10px 20px @black;
+        height: 80vh;
+        z-index: 9;
+
+        &:before {
+            content: '';
+            background: radial-gradient(at left bottom, #220B62, rgba(0,0,0,0));
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+        }
+    }
+    .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 20;
+
+        .row {
+            height: 100%;
+
+            > * {
+                height: 100%;
+            }
+        }
+        
+        .text {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+
+            .top {
+                h1 {
+                    font-size: 24px;
+                    letter-spacing: 0;
+                }
+            }
+
+
+            .dates {
+                h2 {
+                    color: @white;
+                    font-size: 54px;
+                    line-height: 1;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    letter-spacing: .3px;
+                    margin-bottom: 7px;
+
+                    span {
+                        font-size: 84px;
+                    }
+
+                    
+                }
+                h3 {
+                    margin-top: 0;
+                    margin-bottom: 40px;
+                    color: @blue;
+                    font-weight: bold;
+                    font-size: 18px;
+                    text-transform: uppercase;
+                    letter-spacing: .3px;
+                }
+                p {
+                    color: @blue;
+                    font-weight: normal;
+                    font-size: 14px;
+                }
+            }
+            
+        }
+    }
+
+    .animation {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+    }
+}
+
+@media (min-width: 600px) {
+    .banner {
+        height: 100vh;
+
+        .banner-img {
+            height: 100vh;
+            background-size: cover;
+            background-position: center 44%;
+            padding-bottom: 80vh;
+        }
+    }
+}
+
+.block75 {
+    background: radial-gradient(at right top, #512368, #351957);
+    background: radial-gradient(at right top, #973D92, #391C59);
+    position: relative;
+
+    .banner-img {
+        background-size: 240%;
+        background-position: center top;
+        opacity: .5;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .padded {
+        padding-top: 80px;
+        padding-bottom: 90px;
+    }
+    h2 {
+        color: @white;
+        font-size: 32px;
+    }
+    p {
+        color: @blue;
+        font-size: 18px;
+        max-width: 50ch;
+    }
+    .dates {
+        border-right: 2px dotted @blue;
+        
+        h2 {
+            color: @white;
+            font-size: 54px;
+            line-height: 1;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: .3px;
+            margin-bottom: 7px;
+
+        }
+        h3 {
+            margin-top: 0;
+            margin-bottom: 5px;
+            color: @skyblue;
+            font-weight: bold;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: .3px;
+        }
+        p {
+            color: @blue;
+            font-weight: normal;
+            font-size: 14px;
+        }
+    }
+}
+.tep {
+    background: radial-gradient(at center top, #D8FFEB, #0D8ED1);
+    position: relative;
+
+    img {
+        max-width: 70vw;
+        margin: 0 auto;
+    }
+    p {
+        color: @white;
+        font-size: 18px;
+        text-align: center;
+        margin: 40px auto;
+        max-width: 20ch;
+    }
+}
+.rides {
+    padding: 80px 0 60px;
+
+    h2 {
+        color: @purple;
+        font-size: 32px;
+        max-width: 11ch;
+    }
+    p {
+        color: @black;
+        font-size: 18px;
+        text-align: left;
+        max-width: 50ch;
+    }
+    .ride {
+        margin-bottom: 30px;
+
+        a {
+            .img, h3, p, span {
+                transition: all .3s ease;
+            }
+        }
+        h3 {
+            color: @purple;
+            font-size: 22px;
+            margin-top: 15px;
+            margin-bottom: 6px;
+        }
+        p {
+            font-size: 17px;
+            text-transform: uppercase;
+            letter-spacing: .3px;
+        }
+        span {
+            border-bottom: 1px solid transparent;
+        }
+        a:hover,
+        a:focus {
+            .img {
+                opacity: .7;
+            }
+            h3 {
+                color: @purple;
+            }
+            span {
+                color: @purple;
+                border-bottom: 1px solid @purple;
+            }
+        }
+    }
+}
+
+.foodbank {
+    background: @foodbanklt;
+}
+
+.sponsors {
+    padding: 80px 0 40px;
+
+    .tep-img {
+        a {
+            margin: 0 auto;
+            text-align: center;
+            display: inline-block;
+        }
+        img {
+            max-width: 350px;
+        }
+        p {
+            max-width: 40ch;
+            margin: 0 auto;
+        }
+    }
+}
+
+.sub-banner {
+    background: @black;
+
+    .sub-content {
+        padding: 2px 35px 8px;
+
+        .nav-btn {
+          padding: 0 10px;
+        }
+    }
+
+    h2 {
+        color: @light;
+        font-size: 18px;
+
+        small {
+            font-size: 1rem;
+            color: @tan;
+        }
+    }
+}
+
+/*
+    Custom
+*/
+.ride-box {
+    h3 {
+        font-weight: normal;
+        margin: 0;
+        padding: 8px 0;
+
+    }
+}
+@media (min-width: 640px) {
+    .ride-box {
+        h3 {
+            font-size: 28px;
+            text-align: center;
+            padding: 20px 0;
+        }
+    }
+}
+.donate-box {
+    padding: 1px 35px 10px;
+    h3 {
+        max-width: 60%;
+        display: inline-block;
+    }
+    .btn {
+        display: inline-block;
+        max-width: 40%;
+        vertical-align: text-bottom;
+        margin: 0 0 8px 0;
+    }
+}
+@media (min-width: 640px) {
+    .donate-box {
+        padding: 5px 30px 20px;
+        margin-top: 20px;
+
+        h3 {
+            display: block;
+            max-width: none;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            margin: 20px auto 0;
+            max-width: none;
+            width: 150px;
+            display: block;
+        }
+    }
+}
+
+/*
+    Footer
+*/
+.footer {
+    background: @black;
+    color: @light;
+
+    a {
+        color: @blue;
+    }
+    h2 {
+        margin-top: 10px;
+        font-size: 42px;
+    }
+}

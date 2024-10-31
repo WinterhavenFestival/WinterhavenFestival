@@ -1,0 +1,43 @@
+
+@-webkit-keyframes shine {
+    0%, 3% {
+        background-position: -1000px;
+    }
+    10% {
+        background-position: top left;
+    }
+    25% {
+        background-position: top right;
+    }
+    30%, 40% {
+        background-position: 1000px;
+    }
+    45% {
+        background-position: top right;
+    }
+    55% {
+        background-position: top left;
+    }
+    60%, 63% {
+        background-position: -1000px;
+    }
+    70% {
+        background-position: top left;
+    }
+    90% {
+        background-position: top right;
+    }
+    100% {
+        background-position: 1000px;
+    }
+}
+.banner .content .text .dates h2.shine {
+    background: #222 -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff)) 0 0 no-repeat;
+    -webkit-background-size: 150px;
+    color: rgba(255, 255, 255, 0.7);
+    -webkit-background-clip: text;
+    -webkit-animation-name: shine;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite;
+    text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
+}

@@ -1,0 +1,135 @@
+@dkgrey: #4d4d4d;
+@dkgrey2: #2a2a2a;
+@ltgrey: #b4b4b4;
+@ltgreyb: #e9e9e9;
+@white: #FFFFFF;
+@black: #0a0a0a;
+
+/* BRAND */
+@light: #e9e8e5; //#d7d1c4;
+@tan: #a49382;
+@brown: #483627;
+@blue: #52C4FF;
+@skyblue: #B9E7FF;
+@dkblue: #006F79;
+@seafoam: #54FFA7;
+@purple: #6F2F79;
+@dkpurple: #44206B;
+
+/* OTHER */
+@green: #0A560A;
+@foodbank: #5C233F;
+@foodbanklt: #f8f4f6;
+
+.text-light {
+    color: @light;
+}
+.text-tan {
+    color: @tan !important;
+}
+.text-blue {
+    color: @blue;
+}
+.text-dkblue {
+    color: @dkblue;
+}
+.text-green {
+    color: @green;
+}
+.text-foodbank {
+    color: @foodbank;
+}
+
+.bg-black {
+    background-color: @black;
+
+    .container {
+        background-color: @black;
+        color: @light;
+    }
+}
+.bg-dkgrey {
+    background-color: @dkgrey2;
+
+    .container {
+        color: @ltgrey;
+    }
+}
+.bg-light {
+    background-color: @light;
+
+    .container {
+        background-color: @light;
+        color: @dkgrey2;
+    }
+}
+.bg-purple {
+    background-color: @dkpurple;
+    background: radial-gradient(at center top, @purple, @dkpurple);
+
+    .container {
+        color: @white;
+    }
+}
+.bg-tan {
+    background-color: @tan;
+
+    .container {
+        background-color: @tan;
+        color: @brown;
+    }
+}
+.bg-brown {
+    background-color: @brown;
+
+    .container {
+        background-color: @brown;
+        color: @white;
+    }
+}
+.bg-blue {
+    background-color: @blue;
+
+    .container {
+        background-color: @blue;
+        color: @white;
+    }
+    a {
+        color: @white;
+        text-decoration: none;
+        border-bottom: 1px solid @white;
+        transition: all .25s ease;
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+            border-bottom: 1px solid @white;
+            color: @white;
+        }
+    }
+    .btn {
+        border: none;
+
+        &:hover,
+        &:focus {
+            border: none;
+            background: @white;
+            color: @dkblue;
+        }
+    }
+}
+.bg-green {
+    background-color: @green;
+
+    .container {
+        background-color: @green;
+        color: @white;
+
+        h2 {
+            color: @white;
+        }
+        h2 small {
+            color: @light;
+        }
+    }
+}
