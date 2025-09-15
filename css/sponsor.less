@@ -7,6 +7,37 @@
         max-width: 20ch;
         font-weight: bold;
     }
+    h3 {
+        font-size: 1.5rem;
+    }
+    p {
+        font-size: 17px;
+        max-width: 65ch;
+    }
+    small {
+        color: inherit;
+    }
+
+    a {
+        font-size: 17px;
+        color: @dkblue;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            color: @purple;
+            border-bottom: 1px solid @purple;
+            text-decoration: none;
+        }
+    }
+    a.btn {
+        color: @white;
+
+        &:hover {
+            border-color: @dkblue;
+            text-decoration: underline;
+        }
+    }
 }
 
 .vendor-opportunity {
@@ -22,6 +53,8 @@
 
     h3 {
         margin-bottom: 15px;
+        color: @purple;
+        font-size: 1.5rem;
     }
 
     p {
@@ -68,4 +101,14 @@
 
 .process-steps {
     margin: 30px 0;
+
+    h4 {
+        font-weight: bold;
+    }
+}
+
+.get-started {
+    p { 
+        margin: 0 auto;
+    }
 }
