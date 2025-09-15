@@ -21,3 +21,45 @@ header {
         }
     }
 }
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .nav {
+        li {
+            a {
+                color: @white;
+                font-weight: bold;
+
+                &:hover,
+                &:focus {
+                    color: @blue;
+                    text-decoration: underline;
+                    border-bottom: none;
+                    background: none;
+                }
+            }
+        }
+    }
+}
+.sponsor {
+    .top {
+        .nav {
+            li {
+                a {
+                    color: @dkgrey2;
+
+                    &:hover,
+                    &:focus {
+                        color: @dkblue;
+                        text-decoration: underline;
+                        border-bottom: none;
+                        background: none;
+                    }
+                }
+            }
+        }
+    }
+}
